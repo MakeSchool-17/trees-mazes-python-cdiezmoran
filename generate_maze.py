@@ -14,9 +14,9 @@ def create_dfs(m):
             #Choose random neighbor to be new cell
             random_index = random.randint(0, len(neighbors) - 1)
             neighbor = neighbors[random_index]
-            new_cell = neighbor[0]
+            new_cell, compass_index = neighbor[0], neighbor[1]
             # knock down walls
-            m.connect_cells(current_cell, new_cell, neighbor[1])
+            m.connect_cells(current_cell, new_cell, compass_index)
             # push current cell to stack
             backtrack_stack.append(current_cell)
             # set current_cell to new_cell
